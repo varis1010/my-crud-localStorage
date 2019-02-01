@@ -1,0 +1,20 @@
+
+
+<div class="container-fluid">
+    <form (ngSubmit)='onSave()'>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" value={{name}}>
+        </div>
+
+        <div class="form-group">
+                <label>color:</label>
+                <input type="text" class="form-control" name="color" [(ngModel)]="color" value={{color}}>
+            </div>
+                <input class="btn btn-primary" type="submit" value="Save">
+                 <a routerLink="/" class="btn btn-defult" ><-Back</a>
+           
+    </form>
+</div>
+
+

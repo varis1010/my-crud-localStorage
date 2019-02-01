@@ -1,0 +1,24 @@
+
+<div class="container-fluid">
+
+    <a routerLink='/addProduct'>+Add Products</a>
+    <table class="table">
+        <thead class="thead">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Delete</th>
+                <th>Edit</th>
+        </thead>
+
+        <tbody class="tbody">
+            <tr *ngFor='let products of productService.getProducts();'>
+                <td>{{products.id}}</td>
+                <td>{{products.name}}</td>
+                <td>{{products.color}}</td>
+                <td><app-filter [products]='products'></app-filter></td>
+                 <td><a routerLink="/update/{{ products.id}}" class="btn btn-defult">Edit</a> </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

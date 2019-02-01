@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: sans-serif;
+  }
+  
+  .container-fluid{
+      width: 80%;
+  }
+  
+  form{
+      margin: 30px;
+  }
+  
+  .container-fluid a{
+   
+    font-size: 20px;
+}
+  
+  .container-fluid.table{
+      margin: 10px auto;
+      text-align: center;
+  }
+
+
+table th{
+    text-align: center;
+}
+  
+  /* table.thead>th{
+      text-align: center;
+  }
+  
+  table.tbody>td{
+      text-align: center;
+  }
+   */
+  button{
+      margin: 5px;
+  }

@@ -1,0 +1,14 @@
+<div *ngIf="products">
+  <div>
+      
+      <label>Name:
+        <input [(ngModel)]="products.name" placeholder="name">
+      </label><br>
+      <label>color:
+          <input [(ngModel)]="products.color" placeholder="color">
+        </label>
+    </div>
+
+    <button class="btn btn-success" (click)='goBack()'>Update</button>
+    <Button routerLink="/" class="btn btn-defult" >Back</Button>
+</div>
