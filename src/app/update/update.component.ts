@@ -23,10 +23,12 @@ export class UpdateComponent implements OnInit {
 
   updateProduct():void{
     const id = +this.route.snapshot.paramMap.get('id');
-    this.productsService.updateProduct(id).subscribe(product => this.products = product);
+    this.productsService.getProduct(id).subscribe(product => this.products = product);
   }
 
   goBack():void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productsService.updateProduct(id,this.products);
     this.location.back();
   }
 }

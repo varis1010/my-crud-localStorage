@@ -14,12 +14,12 @@ export class ProductServiceService {
 
   constructor(){
 
-    let products = this.getProducts()
-      if(products.length == 0){
+    this.products = this.getProducts()
+      if(this.products.length == 0){
         this.nextId = 0;
       }
       else{
-        let maxId = products[products.length-1].id;
+        let maxId = this.products[this.products.length-1].id;
         this.nextId = maxId+1;
       }
   }
@@ -48,15 +48,19 @@ export class ProductServiceService {
     this.setLocalStorage(product);
   }
 
-  //  updateProduct(id:number):Observable<Products>{
-  //   // let product = this.getProducts();
-  //   // this.setLocalStorage(product);
-  //   return  of(this.products.find(product=> product.id === id));
-  
-  //  }
-
-   updateProduct(id:number):Observable<Products>{
+  getProduct(id:number):Observable<Products>{
     return of(this.products.find(product => product.id === id));
+  }
+
+  updateProduct(id:number,product:Products):void{
+    this.products.map((rec)=>{
+      if(rec.id === id){
+        rec.name = product.name;
+        rec.color = product.color;
+        return rec;
+      }
+    });
+    this.setLocalStorage(this.products);
   }
    
 }
